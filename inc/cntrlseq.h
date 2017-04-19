@@ -30,64 +30,64 @@
 
 enum
 fmtset {
-    S_BOLD        = "\e[1m",
-    S_DIM         = "\e[2m",
-    S_UNDERLINED  = "\e[4m",
-    S_BLINK       = "\e[5m",
-    S_REVERSE     = "\e[7m",
-    S_HIDDEN      = "\e[8m"
+    S_BOLD        = 1u,
+    S_DIM         = 2u,
+    S_UNDERLINED  = 4u,
+    S_BLINK       = 5u,
+    S_REVERSE     = 7u,
+    S_HIDDEN      = 8u
 };
 
 enum
 fmtreset {
-    RS_ALL        = "\e[0m",
-    S_BOLD        = "\e[21m",
-    S_DIM         = "\e[22m",
-    S_UNDERLINED  = "\e[24m",
-    S_BLINK       = "\e[25m",
-    S_REVERSE     = "\e[27m",
-    S_HIDDEN      = "\e[28m"
+    RS_ALL        = 0u,
+    RS_BOLD       = 21u,
+    RS_DIM        = 22u,
+    RS_UNDERLINED = 24u,
+    RS_BLINK      = 25u,
+    RS_REVERSE    = 27u,
+    RS_HIDDEN     = 28u
 };
 
 enum
 fgcol {
-    FG_DEF            = "\e[39m",
-    FG_BLACK          = "\e[30m",
-    FG_RED            = "\e[31m",
-    FG_GREEN          = "\e[32m",
-    FG_YELLOW         = "\e[33m",
-    FG_BLUE           = "\e[34m",
-    FG_MAGENTA        = "\e[35m",
-    FG_CYAN           = "\e[36m",
-    FG_LIGHT_GRAY     = "\e[37m",
-    FG_DARK_GRAY      = "\e[90m",
-    FG_LIGHT_RED      = "\e[91m",
-    FG_LIGHT_GREEN    = "\e[92m",
-    FG_LIGHT_YELLOW   = "\e[93m",
-    FG_LIGHT_BLUE     = "\e[94m",
-    FG_LIGHT_MAGENTA  = "\e[95m",
-    FG_LIGHT_CYAN     = "\e[96m",
-    FG_WHITE          = "\e[97m"
+    FG_DEF            = 39u,
+    FG_BLACK          = 30u,
+    FG_RED            = 31u,
+    FG_GREEN          = 32u,
+    FG_YELLOW         = 33u,
+    FG_BLUE           = 34u,
+    FG_MAGENTA        = 35u,
+    FG_CYAN           = 36u,
+    FG_LIGHT_GRAY     = 37u,
+    FG_DARK_GRAY      = 90u,
+    FG_LIGHT_RED      = 91u,
+    FG_LIGHT_GREEN    = 92u,
+    FG_LIGHT_YELLOW   = 93u,
+    FG_LIGHT_BLUE     = 94u,
+    FG_LIGHT_MAGENTA  = 95u,
+    FG_LIGHT_CYAN     = 96u,
+    FG_WHITE          = 97u
 };
 
 enum
 bgcol {
-    BG_DEF            = "\e[49m",
-    BG_BLACK          = "\e[40m",
-    BG_RED            = "\e[41m",
-    BG_GREEN          = "\e[42m",
-    BG_YELLOW         = "\e[43m",
-    BG_BLUE           = "\e[44m",
-    BG_MAGENTA        = "\e[45m",
-    BG_CYAN           = "\e[46m",
-    BG_LIGHT_GRAY     = "\e[47m",
-    BG_DARK_GRAY      = "\e[100m",
-    BG_LIGHT_RED      = "\e[101m",
-    BG_LIGHT_GREEN    = "\e[102m",
-    BG_LIGHT_YELLOW   = "\e[103m",
-    BG_LIGHT_BLUE     = "\e[104m",
-    BG_LIGHT_MAGENTA  = "\e[105m",
-    BG_LIGHT_CYAN     = "\e[106m",
-    BG_WHITE          = "\e[107m"
+    BG_DEF            = 49u,
+    BG_BLACK          = 40u,
+    BG_RED            = 41u,
+    BG_GREEN          = 42u,
+    BG_YELLOW         = 43u,
+    BG_BLUE           = 44u,
+    BG_MAGENTA        = 45u,
+    BG_CYAN           = 46u,
+    BG_LIGHT_GRAY     = 47u,
+    BG_DARK_GRAY      = 100u,
+    BG_LIGHT_RED      = 101u,
+    BG_LIGHT_GREEN    = 102u,
+    BG_LIGHT_YELLOW   = 103u,
+    BG_LIGHT_BLUE     = 104u,
+    BG_LIGHT_MAGENTA  = 105u,
+    BG_LIGHT_CYAN     = 106u,
+    BG_WHITE          = 107u
 };
 #endif  /* CNTRLSEQ_H */
