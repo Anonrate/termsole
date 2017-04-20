@@ -49,7 +49,7 @@ bgcol {
     BG_WHITE          = 107u
 };
 
-static enum bgcol   lstbg   = BG_DEF;
+static enum bgcol   lstbgc   = BG_DEF;
 
 void
 bgcset(enum bgcol bgcolor)
@@ -74,7 +74,7 @@ bgcset(enum bgcol bgcolor)
         case BG_LIGHT_MAGENTA:
         case BG_LIGHT_CYAN:
         case BG_WHITE:
-            SET_MSGLUU(INFO, lstbg, (lstbg = bgcolor));
+            SET_MSGLUU(INFO, lstbgc, (lstbgc = bgcolor));
             printf("\e[%um", bgcolor);
 
             break;
