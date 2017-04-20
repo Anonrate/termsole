@@ -55,7 +55,7 @@ void
 bgcset(enum bgcol bgcolor)
 {
     INFUNC_MSGL(DEBUG);
-    switch bggcolor)
+    switch (bgcolor)
     {
         case BG_DEF:
         case BG_BLACK:
