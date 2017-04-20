@@ -74,7 +74,7 @@ fgset(enum fgcol fgcolor)
         case FG_LIGHT_MAGENTA:
         case FG_LIGHT_CYAN:
         case FG_WHITE:
-            SET_MSGLUU(INFO, lstbg, (lstfg = fgcolor));
+            SET_MSGLUU(INFO, lstfg, (lstfg = fgcolor));
             printf("\e[%um", fgcolor);
 
             break;
