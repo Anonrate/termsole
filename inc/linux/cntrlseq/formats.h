@@ -256,4 +256,46 @@ resethidden(void)
     CALLFN_MSGLS(TRACE, "resetfmt()");
     setfmt(RS_HIDDEN);
 }
+
+int
+isboldset(void)
+{
+    INFUNC_MSGL(DEBUG);
+    return lstfmts.fmtbold;
+}
+
+int
+isdimset(void)
+{
+    INFUNC_MSGL(DEBUG);
+    return lstfmts.fmtdim;
+}
+
+int
+isunderlinedset(void)
+{
+    INFUNC_MSGL(DEBUG);
+    return lstfmts.fmtunderlined;
+}
+
+int
+isblinkset(void)
+{
+    INFUNC_MSGL(DEBUG);
+    return lstfmts.fmtblink;
+}
+
+int
+isreverseset(void)
+{
+    INFUNC_MSGL(DEBUG);
+    return lstfmts.fmtreverse;
+}
+
+int
+ishiddenset(void)
+{
+    INFUNC_MSGL(DEBUG);
+    return lstfmts.fmthidden;
+}
 #endif  /* FORMATS_H */

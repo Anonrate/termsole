@@ -35,47 +35,6 @@
 static enum fgcol   lstfg   = FG_DEF;
 static enum bgcol   lstbg   = BG_DEF;
 
-int
-isboldset(void)
-{
-    INFUNC_MSGL(DEBUG);
-    return lstfmts.fmtbold;
-}
-
-int
-isdimset(void)
-{
-    INFUNC_MSGL(DEBUG);
-    return lstfmts.fmtdim;
-}
-
-int
-isunderlinedset(void)
-{
-    INFUNC_MSGL(DEBUG);
-    return lstfmts.fmtunderlined;
-}
-
-int
-isblinkset(void)
-{
-    INFUNC_MSGL(DEBUG);
-    return lstfmts.fmtblink;
-}
-
-int
-isreverseset(void)
-{
-    INFUNC_MSGL(DEBUG);
-    return lstfmts.fmtreverse;
-}
-
-int
-ishiddenset(void)
-{
-    INFUNC_MSGL(DEBUG);
-    return lstfmts.fmthidden;
-}
 
 
 
