@@ -65,7 +65,6 @@ void
 setfmt(enum fmtset sfmt)
 {
     INFUNC_MSGL(DEBUG);
-
     if (sfmt == S_BOLD) {
         SET_MSGLDD(INFO, lstfmts.fmtbold, (lstfmts.fmtbold = 1));
     } else if (sfmt == S_DIM) {
