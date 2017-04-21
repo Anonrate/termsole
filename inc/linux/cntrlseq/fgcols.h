@@ -78,11 +78,13 @@ setfgc(enum fgcol fgcolor)
             lstfgc = fgcolor;
             printf("\e[%um", fgcolor);
 
-            break;
+            R_MSGLU(DEBUG, fgcolor);
+            return (int)fgcolor;
         default:
             logltffnlf(WARNING, "%u is not a valid fgcol!\n", fgcolor);
 
-            break;
+            R_MSGLD(WARNING, 0);
+            return 0;
     }
 }
 
@@ -91,7 +93,10 @@ setfgcdef(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_DEF);
+    int tn = setfgc(FG_DEF);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -99,7 +104,10 @@ setfgcblack(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_BLACK);
+    int tn = setfgc(FG_BLACK);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -107,7 +115,10 @@ setfgcred(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_RED);
+    int tn = setfgc(FG_RED);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -115,7 +126,10 @@ setfgcgreen(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_GREEN);
+    int tn = setfgc(FG_GREEN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -123,7 +137,10 @@ setfgcyellow(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_YELLOW);
+    int tn = setfgc(FG_YELLOW);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -131,7 +148,10 @@ setfgcblue(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_BLUE);
+    int tn = setfgc(FG_BLUE);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -139,7 +159,10 @@ setfgcmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_MAGENTA);
+    int tn = setfgc(FG_MAGENTA);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -147,7 +170,10 @@ setfgccyan(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_CYAN);
+    int tn = setfgc(FG_CYAN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -155,7 +181,10 @@ setfgclightgray(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_LIGHT_GRAY);
+    int tn = setfgc(FG_LIGHT_GRAY);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -163,7 +192,10 @@ setfgcdarkgray(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_DARK_GRAY);
+    int tn = setfgc(FG_DARK_GRAY);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -171,7 +203,10 @@ setfgclightred(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_LIGHT_RED);
+    int tn = setfgc(FG_LIGHT_RED);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -179,7 +214,10 @@ setfgclightgreen(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_LIGHT_GREEN);
+    int tn = setfgc(FG_LIGHT_GREEN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -187,7 +225,10 @@ setfgclightyellow(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_LIGHT_YELLOW);
+    int tn = setfgc(FG_LIGHT_YELLOW);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -195,7 +236,10 @@ setfgclightblue(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_LIGHT_BLUE);
+    int tn = setfgc(FG_LIGHT_BLUE);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -203,7 +247,10 @@ setfgclightmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_LIGHT_MAGENTA);
+    int tn = setfgc(FG_LIGHT_MAGENTA);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -211,7 +258,10 @@ setfgclightcyan(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_LIGHT_CYAN);
+    int tn = setfgc(FG_LIGHT_CYAN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline int
@@ -219,6 +269,9 @@ setfgcwhite(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(FG_WHITE);
+    int tn = setfgc(FG_WHITE);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 #endif  /* FGCOLS_H */
