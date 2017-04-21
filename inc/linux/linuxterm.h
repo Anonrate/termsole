@@ -91,4 +91,30 @@ setfmtbgc(enum fmtset fmt, enum bgcol bgc)
     CALLFN_MSGLS(TRACE, "setbgc()");
     setbgc(bgc);
 }
+
+static inline void
+resetfgbgc(void)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfgcdef()");
+    setfgcdef();
+
+    CALLFN_MSGLS(TRACE, "setbgcdef()");
+    setbgcdef();
+}
+
+static inline void
+resetall(void)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "resetallfmt()");
+    resetallfmt();
+
+    CALLFN_MSGLS(TRACE, "setfgcdef()");
+    setfgcdef();
+
+    CALLFN_MSGLS(TRACE, "setbgcdef()");
+    setbgcdef();
+
+}
 #endif  /* LINUXTERM_H */
