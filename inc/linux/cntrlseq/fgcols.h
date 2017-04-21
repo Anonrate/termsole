@@ -52,7 +52,7 @@ fgcol {
 static enum fgcol   lstfgc   = FG_DEF;
 
 void
-fgcset(enum fgcol fgcolor)
+setfgc(enum fgcol fgcolor)
 {
     INFUNC_MSGL(DEBUG);
     switch (fgcolor)
@@ -87,138 +87,138 @@ fgcset(enum fgcol fgcolor)
 }
 
 void
-fgcsetdef(void)
+setfgcdef(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_DEF);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_DEF);
 }
 
 void
-fgcsetblack(void)
+setfgcblack(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_BLACK);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_BLACK);
 }
 
 void
-fgcsetred(void)
+setfgcred(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_RED);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_RED);
 }
 
 void
-fgcsetgreen(void)
+setfgcgreen(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_GREEN);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_GREEN);
 }
 
 void
-fgcsetyellow(void)
+setfgcyellow(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_YELLOW);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_YELLOW);
 }
 
 void
-fgcsetblue(void)
+setfgcblue(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_BLUE);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_BLUE);
 }
 
 void
-fgcsetmagenta(void)
+setfgcmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_MAGENTA);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_MAGENTA);
 }
 
 void
-fgcsetcyan(void)
+setfgccyan(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_CYAN);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_CYAN);
 }
 
 void
-fgcsetlightgray(void)
+setfgclightgray(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_LIGHT_GRAY);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_LIGHT_GRAY);
 }
 
 void
-fgcsetdarkgray(void)
+setfgcdarkgray(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_DARK_GRAY);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_DARK_GRAY);
 }
 
 void
-fgcsetlightred(void)
+setfgclightred(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_LIGHT_RED);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_LIGHT_RED);
 }
 
 void
-fgcsetlightgreen(void)
+setfgclightgreen(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_LIGHT_GREEN);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_LIGHT_GREEN);
 }
 
 void
-fgcsetlightyellow(void)
+setfgclightyellow(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_LIGHT_YELLOW);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_LIGHT_YELLOW);
 }
 
 void
-fgcsetlightblue(void)
+setfgclightblue(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_LIGHT_BLUE);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_LIGHT_BLUE);
 }
 
 void
-fgcsetlightmagenta(void)
+setfgclightmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_LIGHT_MAGENTA);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_LIGHT_MAGENTA);
 }
 
 void
-fgcsetlightcyan(void)
+setfgclightcyan(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_LIGHT_CYAN);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_LIGHT_CYAN);
 }
 
 void
-fgcsetwhite(void)
+setfgcwhite(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(FG_WHITE);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(FG_WHITE);
 }
 #endif  /* FGCOLS_H */
