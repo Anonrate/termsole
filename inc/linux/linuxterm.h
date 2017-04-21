@@ -32,11 +32,18 @@
 #include  "cntrlseq/fgcols.h"
 #include  "cntrlseq/bgcols.h"
 
-static enum fgcol   lstfg   = FG_DEF;
-static enum bgcol   lstbg   = BG_DEF;
+void
+swapfgbgc(void)
+{
+    INFUNC_MSGL(DEBUG);
+    enum fgcol tfgc = lstfgc;
 
+    CALLFN_MSGLS(TRACE, "fgcset()");
+    fgcset(lstbgc);
 
-
+    CALLFN_MSGLS(TRACE, "bgcset()");
+    bgcset(tfgc);
+}
 
 
 
