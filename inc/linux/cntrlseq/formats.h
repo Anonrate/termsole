@@ -68,12 +68,12 @@ setfmt(enum fmtset fmt)
     if (fmt == S_BOLD)
     {
         SET_MSGLDD(INFO, lstfmts.fmtbold, 1);
-        lstfmts.fmtbold = 1;
+        lstfmts.fmtbold       = 1;
     }
     else if (fmt == S_DIM)
     {
         SET_MSGLDD(INFO, lstfmts.fmtdim, 1);
-        lstfmts.fmtdim = 1;
+        lstfmts.fmtdim        = 1;
     }
     else if (fmt == S_UNDERLINED)
     {
@@ -83,17 +83,17 @@ setfmt(enum fmtset fmt)
     else if (fmt == S_BLINK)
     {
         SET_MSGLDD(INFO, lstfmts.fmtblink, 1);
-        lstfmts.fmtblink = 1;
+        lstfmts.fmtblink      = 1;
     }
     else if (fmt == S_REVERSE)
     {
         SET_MSGLDD(INFO, lstfmts.fmtreverse, 1);
-        lstfmts.fmtreverse = 1;
+        lstfmts.fmtreverse    = 1;
     }
     else if (fmt == S_HIDDEN)
     {
         SET_MSGLDD(INFO, lstfmts.fmthidden, 1);
-        lstfmts.fmthidden = 1;
+        lstfmts.fmthidden     = 1;
     }
     else
     {
@@ -175,14 +175,14 @@ resetfmt(enum fmtreset rsfmtorfmt)
         case S_BOLD:
         case RS_BOLD:
             SET_MSGLDD(INFO, lstfmts.fmtbold, 0);
-            lstfmts.fmtbold = 0;
+            lstfmts.fmtbold       = 0;
             printf("\e[%um", RS_BOLD);
 
             break;
         case S_DIM:
         case RS_DIM:
             SET_MSGLDD(INFO, lstfmts.fmtdim, 0);
-            lstfmts.fmtdim = 0;
+            lstfmts.fmtdim        = 0;
             printf("\e[%um", RS_DIM);
 
             break;
@@ -196,21 +196,21 @@ resetfmt(enum fmtreset rsfmtorfmt)
         case S_BLINK:
         case RS_BLINK:
             SET_MSGLDD(INFO, lstfmts.fmtblink, 0);
-            lstfmts.fmtblink = 0;
+            lstfmts.fmtblink      = 0;
             printf("\e[%um", RS_BLINK);
 
             break;
         case S_REVERSE:
         case RS_REVERSE:
             SET_MSGLDD(INFO, lstfmts.fmtreverse, 0);
-            lstfmts.fmtreverse = 0;
+            lstfmts.fmtreverse    = 0;
             printf("\e[%um", RS_REVERSE);
 
             break;
         case S_HIDDEN:
         case RS_HIDDEN:
             SET_MSGLDD(INFO, lstfmts.fmthidden, 0);
-            lstfmts.fmthidden = 0;
+            lstfmts.fmthidden     = 0;
             printf("\e[%um", RS_HIDDEN);
 
             break;
@@ -282,6 +282,7 @@ int
 isboldset(void)
 {
     INFUNC_MSGL(DEBUG);
+
     return lstfmts.fmtbold;
 }
 
@@ -289,6 +290,7 @@ int
 isdimset(void)
 {
     INFUNC_MSGL(DEBUG);
+
     return lstfmts.fmtdim;
 }
 
@@ -296,6 +298,7 @@ int
 isunderlinedset(void)
 {
     INFUNC_MSGL(DEBUG);
+
     return lstfmts.fmtunderlined;
 }
 
@@ -303,6 +306,7 @@ int
 isblinkset(void)
 {
     INFUNC_MSGL(DEBUG);
+
     return lstfmts.fmtblink;
 }
 
@@ -310,6 +314,7 @@ int
 isreverseset(void)
 {
     INFUNC_MSGL(DEBUG);
+
     return lstfmts.fmtreverse;
 }
 
@@ -317,6 +322,7 @@ int
 ishiddenset(void)
 {
     INFUNC_MSGL(DEBUG);
+
     return lstfmts.fmthidden;
 }
 #endif  /* FORMATS_H */
