@@ -28,4 +28,10 @@
 #ifndef TERMSOLE_H
 #define TERMSOLE_H
 
+#include  "../../lgr/inc/lgr.h"
+#include  "../../lgr/inc/lgrmsgs.h"
+
+#include  "linux/linuxterm.h"
+
+
 #endif  /* TERMSOLE_H */
