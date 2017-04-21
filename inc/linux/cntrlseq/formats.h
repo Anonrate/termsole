@@ -41,24 +41,41 @@ fmts {
 static struct fmts lstfmts = { 0, 0, 0, 0, 0, 0 };
 
 enum
+allfmts {
+    xS_BOLD         = 1u,
+    xS_DIM          = 2u,
+    xS_UNDERLINED   = 4u,
+    xS_BLINK        = 5u,
+    xS_REVERSE      = 7u,
+    xS_HIDDEN       = 8u,
+    xRS_ALL         = 0u,
+    xRS_BOLD        = 21u,
+    xRS_DIM         = 22u,
+    xRS_UNDERLINED  = 24u,
+    xRS_BLINK       = 25u,
+    xRS_REVERSE     = 27u,
+    xRS_HIDDEN      = 28u
+};
+
+enum
 fmtset {
-    S_BOLD        = 1u,
-    S_DIM         = 2u,
-    S_UNDERLINED  = 4u,
-    S_BLINK       = 5u,
-    S_REVERSE     = 7u,
-    S_HIDDEN      = 8u
+    S_BOLD        = xS_BOLD,
+    S_DIM         = xS_DIM,
+    S_UNDERLINED  = xS_UNDERLINED,
+    S_BLINK       = xS_BLINK,
+    S_REVERSE     = xS_REVERSE,
+    S_HIDDEN      = xS_HIDDEN
 };
 
 enum
 fmtreset {
-    RS_ALL        = 0u,
-    RS_BOLD       = 21u,
-    RS_DIM        = 22u,
-    RS_UNDERLINED = 24u,
-    RS_BLINK      = 25u,
-    RS_REVERSE    = 27u,
-    RS_HIDDEN     = 28u
+    RS_ALL        = xRS_ALL,
+    RS_BOLD       = xRS_BOLD,
+    RS_DIM        = xRS_DIM,
+    RS_UNDERLINED = xRS_UNDERLINED,
+    RS_BLINK      = xRS_BLINK,
+    RS_REVERSE    = xRS_REVERSE,
+    RS_HIDDEN     = xRS_HIDDEN
 };
 
 static inline void
@@ -154,12 +171,12 @@ sethidden(void)
 }
 
 static inline void
-resetfmt(enum fmtreset rsfmtorfmt)
+resetfmt(enum allfmts rsfmtorfmt)
 {
     INFUNC_MSGL(DEBUG);
-    if (rsfmtorfmt == RS_ALL)
+    if (rsfmtorfmt == xRS_ALL)
     {
-        printf("\e[%um", RS_ALL);
+        printf("\e[%um", xRS_ALL);
         lstfmts.fmtbold       =
         lstfmts.fmtdim        =
         lstfmts.fmtunderlined =
