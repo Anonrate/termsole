@@ -25,3 +25,26 @@
  *    \endparblock
  */
 
+#include  <stdio.h>
+#include  <stdlib.h>
+
+#include  "../inc/termsole.h"
+
+#define TERMSOLE_DEV
+
+#ifdef  TERMSOLE_DEV
+int
+main(void)
+{
+    setlogtofile(1);
+    setfilename("termsole");
+    setverblvl(TRACE);
+    setfileprio(TRACE);
+    logltffnlf(DEBUG, "%s\n", "Created log file!");
+    dellog();
+
+    return EXIT_SUCCESS;
+}
+
+
+#endif  /* TERMOSLE_DEV */
