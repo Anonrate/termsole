@@ -78,7 +78,10 @@ fmtreset {
     RS_HIDDEN     = xRS_HIDDEN
 };
 
-static inline void
+/**
+ * @return  Retruns \c -1 if fail.
+ */
+static inline int
 setfmt(enum fmtset fmt)
 {
     INFUNC_MSGL(DEBUG);
@@ -116,67 +119,89 @@ setfmt(enum fmtset fmt)
     {
         logltffnlf(WARNING, "%u is not a valid fmt!\n", fmt);
 
-        return;
+        R_MSGLD(WARNING, -1);
+        return -1;
     }
 
     printf("\e[%um", fmt);
+
+    R_MSGLU(DEBUG, fmt);
+    return (int)fmt;
 }
 
-static inline void
+static inline int
 setbold(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(S_BOLD);
+    int tn = setfmt(S_BOLD);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 setdim(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(S_DIM);
+    int tn = setfmt(S_DIM);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 setunderlined(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(S_UNDERLINED);
+    int tn = setfmt(S_UNDERLINED);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 setblink(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(S_BLINK);
+    int tn = setfmt(S_BLINK);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 setreverse(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(S_REVERSE);
+    int tn = setfmt(S_REVERSE);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 sethidden(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(S_HIDDEN);
+    int tn = setfmt(S_HIDDEN);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 resetfmt(enum allfmts rsfmtorfmt)
 {
     INFUNC_MSGL(DEBUG);
-    if (rsfmtorfmt == xRS_ALL)
+    if (!rsfmtorfmt)
     {
-        printf("\e[%um", xRS_ALL);
+        printf("\e[%um", rsfmtorfmt);
         lstfmts.fmtbold       =
         lstfmts.fmtdim        =
         lstfmts.fmtunderlined =
@@ -184,7 +209,8 @@ resetfmt(enum allfmts rsfmtorfmt)
         lstfmts.fmtreverse    =
         lstfmts.fmthidden     = 0;
 
-        return;
+        R_MSGLU(DEBUG, rsfmtorfmt)
+        return (int)rsfmtorfmt;
     }
 
     switch (rsfmtorfmt)
@@ -234,65 +260,90 @@ resetfmt(enum allfmts rsfmtorfmt)
         default:
             logltffnlf(WARNING, "%u is not a valid rsetfmt!\n", rsfmtorfmt);
 
-            break;
+            R_MSGLD(WARNING, -1);
+            return -1;
     }
+
+    R_MSGLU(DEBUG, rsfmtorfmt);
+    return (int)rsfmtorfmt;
 }
 
-static inline void
+static inline int
 resetallfmt(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    setfmt(RS_ALL);
+    int tn = setfmt(RS_ALL);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
 
-static inline void
+static inline int
 resetbold(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    setfmt(RS_BOLD);
+    int tn = setfmt(RS_BOLD);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 resetdim(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    setfmt(RS_DIM);
+    int tn = setfmt(RS_DIM);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 resetunderlined(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    setfmt(RS_UNDERLINED);
+    int tn = setfmt(RS_UNDERLINED);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 resetblink(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    setfmt(RS_BLINK);
+    int tn = setfmt(RS_BLINK);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 resetreverse(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    setfmt(RS_REVERSE);
+    int tn = setfmt(RS_REVERSE);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
-static inline void
+static inline int
 resethidden(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    setfmt(RS_HIDDEN);
+    int tn = setfmt(RS_HIDDEN);
+
+    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
+    return tn;
 }
 
 static inline int
@@ -300,6 +351,7 @@ isboldset(void)
 {
     INFUNC_MSGL(DEBUG);
 
+    R_MSGLD(DEBUG, lstfmts.fmtbold);
     return lstfmts.fmtbold;
 }
 
@@ -308,6 +360,7 @@ isdimset(void)
 {
     INFUNC_MSGL(DEBUG);
 
+    R_MSGLD(DEBUG, lstfmts.fmtdim);
     return lstfmts.fmtdim;
 }
 
@@ -316,6 +369,7 @@ isunderlinedset(void)
 {
     INFUNC_MSGL(DEBUG);
 
+    R_MSGLD(DEBUG, lstfmts.fmtunderlined);
     return lstfmts.fmtunderlined;
 }
 
@@ -324,6 +378,7 @@ isblinkset(void)
 {
     INFUNC_MSGL(DEBUG);
 
+    R_MSGLD(DEBUG, lstfmts.fmtblink);
     return lstfmts.fmtblink;
 }
 
@@ -332,6 +387,7 @@ isreverseset(void)
 {
     INFUNC_MSGL(DEBUG);
 
+    R_MSGLD(DEBUG, lstfmts.fmtreverse);
     return lstfmts.fmtreverse;
 }
 
@@ -340,6 +396,7 @@ ishiddenset(void)
 {
     INFUNC_MSGL(DEBUG);
 
+    R_MSGLD(DEBUG, lstfmts.fmthidden);
     return lstfmts.fmthidden;
 }
 #endif  /* FORMATS_H */
