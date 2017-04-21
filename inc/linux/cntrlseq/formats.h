@@ -61,7 +61,7 @@ fmtreset {
     RS_HIDDEN     = 28u
 };
 
-void
+static inline void
 setfmt(enum fmtset fmt)
 {
     INFUNC_MSGL(DEBUG);
@@ -105,7 +105,7 @@ setfmt(enum fmtset fmt)
     printf("\e[%um", fmt);
 }
 
-void
+static inline void
 setbold(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -113,7 +113,7 @@ setbold(void)
     setfmt(S_BOLD);
 }
 
-void
+static inline void
 setdim(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -121,7 +121,7 @@ setdim(void)
     setfmt(S_DIM);
 }
 
-void
+static inline void
 setunderlined(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -129,7 +129,7 @@ setunderlined(void)
     setfmt(S_UNDERLINED);
 }
 
-void
+static inline void
 setblink(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -137,7 +137,7 @@ setblink(void)
     setfmt(S_BLINK);
 }
 
-void
+static inline void
 setreverse(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -145,7 +145,7 @@ setreverse(void)
     setfmt(S_REVERSE);
 }
 
-void
+static inline void
 sethidden(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -153,7 +153,7 @@ sethidden(void)
     setfmt(S_HIDDEN);
 }
 
-void
+static inline void
 resetfmt(enum fmtreset rsfmtorfmt)
 {
     INFUNC_MSGL(DEBUG);
@@ -221,7 +221,7 @@ resetfmt(enum fmtreset rsfmtorfmt)
     }
 }
 
-void
+static inline void
 resetallfmt(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -230,7 +230,7 @@ resetallfmt(void)
 }
 
 
-void
+static inline void
 resetbold(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -238,7 +238,7 @@ resetbold(void)
     setfmt(RS_BOLD);
 }
 
-void
+static inline void
 resetdim(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -246,7 +246,7 @@ resetdim(void)
     setfmt(RS_DIM);
 }
 
-void
+static inline void
 resetunderlined(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -254,7 +254,7 @@ resetunderlined(void)
     setfmt(RS_UNDERLINED);
 }
 
-void
+static inline void
 resetblink(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -262,7 +262,7 @@ resetblink(void)
     setfmt(RS_BLINK);
 }
 
-void
+static inline void
 resetreverse(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -270,7 +270,7 @@ resetreverse(void)
     setfmt(RS_REVERSE);
 }
 
-void
+static inline void
 resethidden(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -278,7 +278,7 @@ resethidden(void)
     setfmt(RS_HIDDEN);
 }
 
-int
+static inline int
 isboldset(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -286,7 +286,7 @@ isboldset(void)
     return lstfmts.fmtbold;
 }
 
-int
+static inline int
 isdimset(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -294,7 +294,7 @@ isdimset(void)
     return lstfmts.fmtdim;
 }
 
-int
+static inline int
 isunderlinedset(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -302,7 +302,7 @@ isunderlinedset(void)
     return lstfmts.fmtunderlined;
 }
 
-int
+static inline int
 isblinkset(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -310,7 +310,7 @@ isblinkset(void)
     return lstfmts.fmtblink;
 }
 
-int
+static inline int
 isreverseset(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -318,7 +318,7 @@ isreverseset(void)
     return lstfmts.fmtreverse;
 }
 
-int
+static inline int
 ishiddenset(void)
 {
     INFUNC_MSGL(DEBUG);

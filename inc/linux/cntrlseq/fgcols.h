@@ -51,7 +51,7 @@ fgcol {
 
 static enum fgcol   lstfgc   = FG_DEF;
 
-void
+static inline void
 setfgc(enum fgcol fgcolor)
 {
     INFUNC_MSGL(DEBUG);
@@ -86,7 +86,7 @@ setfgc(enum fgcol fgcolor)
     }
 }
 
-void
+static inline void
 setfgcdef(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -94,7 +94,7 @@ setfgcdef(void)
     setfgc(FG_DEF);
 }
 
-void
+static inline void
 setfgcblack(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -102,7 +102,7 @@ setfgcblack(void)
     setfgc(FG_BLACK);
 }
 
-void
+static inline void
 setfgcred(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -110,7 +110,7 @@ setfgcred(void)
     setfgc(FG_RED);
 }
 
-void
+static inline void
 setfgcgreen(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -118,7 +118,7 @@ setfgcgreen(void)
     setfgc(FG_GREEN);
 }
 
-void
+static inline void
 setfgcyellow(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -126,7 +126,7 @@ setfgcyellow(void)
     setfgc(FG_YELLOW);
 }
 
-void
+static inline void
 setfgcblue(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -134,7 +134,7 @@ setfgcblue(void)
     setfgc(FG_BLUE);
 }
 
-void
+static inline void
 setfgcmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -142,7 +142,7 @@ setfgcmagenta(void)
     setfgc(FG_MAGENTA);
 }
 
-void
+static inline void
 setfgccyan(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -150,7 +150,7 @@ setfgccyan(void)
     setfgc(FG_CYAN);
 }
 
-void
+static inline void
 setfgclightgray(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -158,7 +158,7 @@ setfgclightgray(void)
     setfgc(FG_LIGHT_GRAY);
 }
 
-void
+static inline void
 setfgcdarkgray(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -166,7 +166,7 @@ setfgcdarkgray(void)
     setfgc(FG_DARK_GRAY);
 }
 
-void
+static inline void
 setfgclightred(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -174,7 +174,7 @@ setfgclightred(void)
     setfgc(FG_LIGHT_RED);
 }
 
-void
+static inline void
 setfgclightgreen(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -182,7 +182,7 @@ setfgclightgreen(void)
     setfgc(FG_LIGHT_GREEN);
 }
 
-void
+static inline void
 setfgclightyellow(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -190,7 +190,7 @@ setfgclightyellow(void)
     setfgc(FG_LIGHT_YELLOW);
 }
 
-void
+static inline void
 setfgclightblue(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -198,7 +198,7 @@ setfgclightblue(void)
     setfgc(FG_LIGHT_BLUE);
 }
 
-void
+static inline void
 setfgclightmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -206,7 +206,7 @@ setfgclightmagenta(void)
     setfgc(FG_LIGHT_MAGENTA);
 }
 
-void
+static inline void
 setfgclightcyan(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -214,7 +214,7 @@ setfgclightcyan(void)
     setfgc(FG_LIGHT_CYAN);
 }
 
-void
+static inline void
 setfgcwhite(void)
 {
     INFUNC_MSGL(DEBUG);
