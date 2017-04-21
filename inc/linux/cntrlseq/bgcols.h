@@ -78,11 +78,13 @@ setbgc(enum bgcol bgcolor)
             lstbgc = bgcolor;
             printf("\e[%um", bgcolor);
 
-            break;
+            R_MSGLU(DEBUG, bgcolor);
+            return (int)bgcolor;
         default:
             logltffnlf(WARNING, "%u is not a valid bgcol!\n", bgcolor);
 
-            break;
+            R_MSGLD(WARNING, 0);
+            return 0;
     }
 }
 
@@ -91,7 +93,10 @@ setbgcdef(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_DEF);
+    int tn = setbgc(BG_DEF);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -99,7 +104,10 @@ setbgcblack(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_BLACK);
+    int tn = setbgc(BG_BLACK);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -107,7 +115,10 @@ setbgcred(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_RED);
+    int tn = setbgc(BG_RED);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -115,7 +126,10 @@ setbgcgreen(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_GREEN);
+    int tn = setbgc(BG_GREEN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -123,7 +137,10 @@ setbgcyellow(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_YELLOW);
+    int tn = setbgc(BG_YELLOW);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -131,7 +148,10 @@ setbgcblue(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_BLUE);
+    int tn = setbgc(BG_BLUE);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -139,7 +159,10 @@ setbgcmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_MAGENTA);
+    int tn = setbgc(BG_MAGENTA);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -147,7 +170,10 @@ setbgccyan(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_CYAN);
+    int tn = setbgc(BG_CYAN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -155,7 +181,10 @@ setbgclightgray(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_LIGHT_GRAY);
+    int tn = setbgc(BG_LIGHT_GRAY);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -163,7 +192,10 @@ setbgcdarkgray(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_DARK_GRAY);
+    int tn = setbgc(BG_DARK_GRAY);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -171,7 +203,10 @@ setbgclightred(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_LIGHT_RED);
+    int tn = setbgc(BG_LIGHT_RED);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -179,7 +214,10 @@ setbgclightgreen(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_LIGHT_GREEN);
+    int tn = setbgc(BG_LIGHT_GREEN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -187,7 +225,10 @@ setbgclightyellow(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_LIGHT_YELLOW);
+    int tn = setbgc(BG_LIGHT_YELLOW);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -195,7 +236,10 @@ setbgclightblue(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_LIGHT_BLUE);
+    int tn = setbgc(BG_LIGHT_BLUE);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -203,7 +247,10 @@ setbgclightmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_LIGHT_MAGENTA);
+    int tn = setbgc(BG_LIGHT_MAGENTA);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -211,7 +258,10 @@ setbgclightcyan(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_LIGHT_CYAN);
+    int tn = setbgc(BG_LIGHT_CYAN);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
 static inline void
@@ -219,6 +269,9 @@ setbgcwhite(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(BG_WHITE);
+    int tn = setbgc(BG_WHITE);
+
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 #endif  /* BGCOLS_H */
