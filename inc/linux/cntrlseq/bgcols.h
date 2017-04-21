@@ -52,7 +52,7 @@ bgcol {
 static enum bgcol   lstbgc   = BG_DEF;
 
 void
-bgcset(enum bgcol bgcolor)
+setbgc(enum bgcol bgcolor)
 {
     INFUNC_MSGL(DEBUG);
     switch (bgcolor)
@@ -87,138 +87,138 @@ bgcset(enum bgcol bgcolor)
 }
 
 void
-bgcsetdef(void)
+setbgcdef(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_DEF);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_DEF);
 }
 
 void
-bgcsetblack(void)
+setbgcblack(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_BLACK);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_BLACK);
 }
 
 void
-bgcsetred(void)
+setbgcred(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_RED);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_RED);
 }
 
 void
-bgcsetgreen(void)
+setbgcgreen(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_GREEN);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_GREEN);
 }
 
 void
-bgcsetyellow(void)
+setbgcyellow(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_YELLOW);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_YELLOW);
 }
 
 void
-bgcsetblue(void)
+setbgcblue(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_BLUE);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_BLUE);
 }
 
 void
-bgcsetmagenta(void)
+setbgcmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_MAGENTA);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_MAGENTA);
 }
 
 void
-bgcsetcyan(void)
+setbgccyan(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_CYAN);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_CYAN);
 }
 
 void
-bgcsetlightgray(void)
+setbgclightgray(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_LIGHT_GRAY);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_LIGHT_GRAY);
 }
 
 void
-bgcsetdarkgray(void)
+setbgcdarkgray(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_DARK_GRAY);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_DARK_GRAY);
 }
 
 void
-bgcsetlightred(void)
+setbgclightred(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_LIGHT_RED);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_LIGHT_RED);
 }
 
 void
-bgcsetlightgreen(void)
+setbgclightgreen(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_LIGHT_GREEN);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_LIGHT_GREEN);
 }
 
 void
-bgcsetlightyellow(void)
+setbgclightyellow(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_LIGHT_YELLOW);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_LIGHT_YELLOW);
 }
 
 void
-bgcsetlightblue(void)
+setbgclightblue(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_LIGHT_BLUE);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_LIGHT_BLUE);
 }
 
 void
-bgcsetlightmagenta(void)
+setbgclightmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_LIGHT_MAGENTA);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_LIGHT_MAGENTA);
 }
 
 void
-bgcsetlightcyan(void)
+setbgclightcyan(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_LIGHT_CYAN);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_LIGHT_CYAN);
 }
 
 void
-bgcsetwhite(void)
+setbgcwhite(void)
 {
     INFUNC_MSGL(DEBUG);
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(BG_WHITE);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(BG_WHITE);
 }
 #endif  /* BGCOLS_H */
