@@ -38,17 +38,57 @@ swapfgbgc(void)
     INFUNC_MSGL(DEBUG);
     enum fgcol tfgc = lstfgc;
 
-    CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(lstbgc - 10u);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(lstbgc - 10u);
 
-    CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(tfgc + 10u);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(tfgc + 10u);
 }
 
+void
+setfgbgc(enum fgcol fgc, enum bgcol bgc)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(fgc);
 
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(bgc);
+}
 
+void
+setfmtfgbgc(enum setfmt fmt, enum fgcol fgc, enum bgcol bgc)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmt()");
+    setfmt(fmt);
 
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(fgc);
 
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(bgc);
+}
 
+void
+setfmtfgc(enum setfmt fmt, enum fgcol fgc)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmt()");
+    setfmt(fmt);
 
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(fgc);
+}
+
+void
+setfmtbgc(enum setfmt fmt, enum bgcol bgc)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmt()");
+    setfmt(fmt);
+
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(bgc);
+}
 #endif  /* LINUXTERM_H */
