@@ -222,7 +222,7 @@ resetfmt(enum fmtreset rsfmtorfmt)
 }
 
 void
-resetall(void)
+resetallfmt(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
