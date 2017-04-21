@@ -74,7 +74,8 @@ bgcset(enum bgcol bgcolor)
         case BG_LIGHT_MAGENTA:
         case BG_LIGHT_CYAN:
         case BG_WHITE:
-            SET_MSGLUU(INFO, lstbgc, (lstbgc = bgcolor));
+            SET_MSGLUU(INFO, lstbgc, bgcolor);
+            lstbgc = bgcolor;
             printf("\e[%um", bgcolor);
 
             break;
