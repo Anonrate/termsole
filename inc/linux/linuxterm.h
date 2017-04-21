@@ -32,7 +32,7 @@
 #include  "cntrlseq/fgcols.h"
 #include  "cntrlseq/bgcols.h"
 
-static inline void
+static inline int
 swapfgbgc(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -45,7 +45,7 @@ swapfgbgc(void)
     setbgc(tfgc + 10u);
 }
 
-static inline void
+static inline int
 setfgbgc(enum fgcol fgc, enum bgcol bgc)
 {
     INFUNC_MSGL(DEBUG);
@@ -56,7 +56,7 @@ setfgbgc(enum fgcol fgc, enum bgcol bgc)
     setbgc(bgc);
 }
 
-static inline void
+static inline int
 setfmtfgbgc(enum fmtset fmt, enum fgcol fgc, enum bgcol bgc)
 {
     INFUNC_MSGL(DEBUG);
@@ -81,7 +81,7 @@ setfmtfgc(enum fmtset fmt, enum fgcol fgc)
     setfgc(fgc);
 }
 
-static inline void
+static inline int
 setfmtbgc(enum fmtset fmt, enum bgcol bgc)
 {
     INFUNC_MSGL(DEBUG);
@@ -92,7 +92,7 @@ setfmtbgc(enum fmtset fmt, enum bgcol bgc)
     setbgc(bgc);
 }
 
-static inline void
+static inline int
 resetfgbgc(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -103,7 +103,7 @@ resetfgbgc(void)
     setbgcdef();
 }
 
-static inline void
+static inline int
 resetall(void)
 {
     INFUNC_MSGL(DEBUG);
