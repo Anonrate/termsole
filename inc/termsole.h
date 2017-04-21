@@ -33,5 +33,11 @@
 
 #include  "linux/linuxterm.h"
 
+static inline
+printfmtf(enum fmtset fmt, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmt()");
 
+}
 #endif  /* TERMSOLE_H */

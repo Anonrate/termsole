@@ -43,6 +43,9 @@ main(void)
     logltffnlf(DEBUG, "%s\n", "Created log file!");
     dellog();
 
+    swapfgbgc();
+    printf("Bruh!\n");
+
     return EXIT_SUCCESS;
 }
 

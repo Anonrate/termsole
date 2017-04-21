@@ -28,66 +28,7 @@
 #ifndef CNTRLSEQ_H
 #define CNTRLSEQ_H
 
-enum
-fmtset {
-    S_BOLD        = 1u,
-    S_DIM         = 2u,
-    S_UNDERLINED  = 4u,
-    S_BLINK       = 5u,
-    S_REVERSE     = 7u,
-    S_HIDDEN      = 8u
-};
 
-enum
-fmtreset {
-    RS_ALL        = 0u,
-    RS_BOLD       = 21u,
-    RS_DIM        = 22u,
-    RS_UNDERLINED = 24u,
-    RS_BLINK      = 25u,
-    RS_REVERSE    = 27u,
-    RS_HIDDEN     = 28u
-};
 
-enum
-fgcol {
-    FG_DEF            = 39u,
-    FG_BLACK          = 30u,
-    FG_RED            = 31u,
-    FG_GREEN          = 32u,
-    FG_YELLOW         = 33u,
-    FG_BLUE           = 34u,
-    FG_MAGENTA        = 35u,
-    FG_CYAN           = 36u,
-    FG_LIGHT_GRAY     = 37u,
-    FG_DARK_GRAY      = 90u,
-    FG_LIGHT_RED      = 91u,
-    FG_LIGHT_GREEN    = 92u,
-    FG_LIGHT_YELLOW   = 93u,
-    FG_LIGHT_BLUE     = 94u,
-    FG_LIGHT_MAGENTA  = 95u,
-    FG_LIGHT_CYAN     = 96u,
-    FG_WHITE          = 97u
-};
 
-enum
-bgcol {
-    BG_DEF            = 49u,
-    BG_BLACK          = 40u,
-    BG_RED            = 41u,
-    BG_GREEN          = 42u,
-    BG_YELLOW         = 43u,
-    BG_BLUE           = 44u,
-    BG_MAGENTA        = 45u,
-    BG_CYAN           = 46u,
-    BG_LIGHT_GRAY     = 47u,
-    BG_DARK_GRAY      = 100u,
-    BG_LIGHT_RED      = 101u,
-    BG_LIGHT_GREEN    = 102u,
-    BG_LIGHT_YELLOW   = 103u,
-    BG_LIGHT_BLUE     = 104u,
-    BG_LIGHT_MAGENTA  = 105u,
-    BG_LIGHT_CYAN     = 106u,
-    BG_WHITE          = 107u
-};
 #endif  /* CNTRLSEQ_H */

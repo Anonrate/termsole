@@ -32,6 +32,10 @@
 #include  "cntrlseq/fgcols.h"
 #include  "cntrlseq/bgcols.h"
 
+/**
+ * @returns If <tt>setfgc()</tt> and <tt>setbgc()</tt> are suucessfull, a value
+ *            >= (FG_DEF + BG_DEF) and <=
+ */
 static inline int
 swapfgbgc(void)
 {
