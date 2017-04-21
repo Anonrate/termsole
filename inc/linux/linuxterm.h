@@ -39,10 +39,10 @@ swapfgbgc(void)
     enum fgcol tfgc = lstfgc;
 
     CALLFN_MSGLS(TRACE, "fgcset()");
-    fgcset(lstbgc);
+    fgcset(lstbgc - 10u);
 
     CALLFN_MSGLS(TRACE, "bgcset()");
-    bgcset(tfgc);
+    bgcset(tfgc + 10u);
 }
 
 
