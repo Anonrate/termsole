@@ -209,7 +209,7 @@ resetfmt(enum allfmts rsfmtorfmt)
         lstfmts.fmtreverse    =
         lstfmts.fmthidden     = 0;
 
-        R_MSGLU(DEBUG, rsfmtorfmt)
+        R_MSGLU(DEBUG, rsfmtorfmt);
         return (int)rsfmtorfmt;
     }
 
