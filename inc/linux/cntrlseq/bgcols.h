@@ -51,7 +51,7 @@ bgcol {
 
 static enum bgcol   lstbgc   = BG_DEF;
 
-void
+static inline int
 setbgc(enum bgcol bgcolor)
 {
     INFUNC_MSGL(DEBUG);
@@ -88,7 +88,7 @@ setbgc(enum bgcol bgcolor)
     }
 }
 
-static inline void
+static inline int
 setbgcdef(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -99,7 +99,7 @@ setbgcdef(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcblack(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -110,7 +110,7 @@ setbgcblack(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcred(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -121,7 +121,7 @@ setbgcred(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcgreen(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -132,7 +132,7 @@ setbgcgreen(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcyellow(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -143,7 +143,7 @@ setbgcyellow(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcblue(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -154,7 +154,7 @@ setbgcblue(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -165,7 +165,7 @@ setbgcmagenta(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgccyan(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -176,7 +176,7 @@ setbgccyan(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgclightgray(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -187,7 +187,7 @@ setbgclightgray(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcdarkgray(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -198,7 +198,7 @@ setbgcdarkgray(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgclightred(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -209,7 +209,7 @@ setbgclightred(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgclightgreen(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -220,7 +220,7 @@ setbgclightgreen(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgclightyellow(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -231,7 +231,7 @@ setbgclightyellow(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgclightblue(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -242,7 +242,7 @@ setbgclightblue(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgclightmagenta(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -253,7 +253,7 @@ setbgclightmagenta(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgclightcyan(void)
 {
     INFUNC_MSGL(DEBUG);
@@ -264,7 +264,7 @@ setbgclightcyan(void)
     return tn;
 }
 
-static inline void
+static inline int
 setbgcwhite(void)
 {
     INFUNC_MSGL(DEBUG);
