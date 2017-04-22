@@ -51,6 +51,8 @@ swapfgbgc(void)
 
     CALLFN_MSGLS(TRACE, "setbgc()");
     setbgc(tfgc + 10u);
+
+    return 0;
 }
 
 /**
@@ -70,6 +72,8 @@ setfgbgc(enum fgcol fgc, enum bgcol bgc)
 
     CALLFN_MSGLS(TRACE, "setbgc()");
     setbgc(bgc);
+
+    return 0;
 }
 
 /**
@@ -102,6 +106,8 @@ setfmtfgbgc(enum fmtset fmt, enum fgcol fgc, enum bgcol bgc)
 
     CALLFN_MSGLS(TRACE, "setbgc()");
     setbgc(bgc);
+
+    return 0;
 }
 
 /**
@@ -112,7 +118,7 @@ setfmtfgbgc(enum fmtset fmt, enum fgcol fgc, enum bgcol bgc)
  *              returned.\n
  *            If \c setfgc() and \c setbgc() fail, \c 0 will be returned.
  */
-static inline void
+static inline int
 setfmtfgc(enum fmtset fmt, enum fgcol fgc)
 {
     INFUNC_MSGL(DEBUG);
@@ -121,6 +127,8 @@ setfmtfgc(enum fmtset fmt, enum fgcol fgc)
 
     CALLFN_MSGLS(TRACE, "setfgc()");
     setfgc(fgc);
+
+    return 0;
 }
 
 /**
@@ -140,6 +148,8 @@ setfmtbgc(enum fmtset fmt, enum bgcol bgc)
 
     CALLFN_MSGLS(TRACE, "setbgc()");
     setbgc(bgc);
+
+    return 0;
 }
 
 /**
@@ -156,11 +166,19 @@ static inline int
 resetfgbgc(void)
 {
     INFUNC_MSGL(DEBUG);
+
+    int tn = 0;
     CALLFN_MSGLS(TRACE, "setfgcdef()");
-    setfgcdef();
+    tn += (setfgcdef() ? 2 : 0);
 
     CALLFN_MSGLS(TRACE, "setbgcdef()");
-    setbgcdef();
+    tn += (setbgcdef()
+            ? (tn
+                ? (3 + 2)
+                : 3)
+            : 0);
+
+    return tn;
 }
 /**
  *  @returns  If \c resetallfmt(), \c setfgcdef() and \c setbgcdef() succeed,
@@ -184,14 +202,28 @@ static inline int
 resetall(void)
 {
     INFUNC_MSGL(DEBUG);
+
+    int tn = 0;
     CALLFN_MSGLS(TRACE, "resetallfmt()");
-    resetallfmt();
+    tn += (resetallfmt() >= 0 ? 1 : 0);
 
+    printf("%d\n", tn);
     CALLFN_MSGLS(TRACE, "setfgcdef()");
-    setfgcdef();
+    tn += (setfgcdef()
+            ? (tn
+                ? (tn++ + 2)
+                : 2)
+            : 0);
 
+    printf("%d\n", tn);
     CALLFN_MSGLS(TRACE, "setbgcdef()");
-    setbgcdef();
+    tn += (setbgcdef()
+            ? (tn
+                ? (tn++ + 3)
+                : 3)
+            : 0);
 
+    printf("%d\n", tn);
+    return tn;
 }
 #endif  /* LINUXTERM_H */
