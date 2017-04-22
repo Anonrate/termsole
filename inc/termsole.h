@@ -28,16 +28,54 @@
 #ifndef TERMSOLE_H
 #define TERMSOLE_H
 
+#include  <stdarg.h>
+
 #include  "../../lgr/inc/lgr.h"
 #include  "../../lgr/inc/lgrmsgs.h"
 
 #include  "linux/linuxterm.h"
 
-static inline
+inline int
+xvfprintf(FILE *stream, const char *format, va_list vargs)
+{
+    INFUNC_MSGL(DEBUG);
+
+    int tn = 0;
+    va_start(vargs, format);
+    tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+static inline int
+fprintfmtf(FILE *stream, enum fmtset fmt, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmt()");
+    setfmt(fmt);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stream, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+static inline int
 printfmtf(enum fmtset fmt, const char *format, ...)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "setfmt()");
+    setfmt(fmt);
 
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stdout, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
 }
 #endif  /* TERMSOLE_H */
