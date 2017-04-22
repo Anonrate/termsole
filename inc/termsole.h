@@ -78,4 +78,218 @@ printfmtf(enum fmtset fmt, const char *format, ...)
     R_MSGLD(DEBUG, tn);
     return tn;
 }
+
+static inline int
+fprintfgcf(FILE *stream, enum fgcol fgc, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(fgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stream, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+static inline int
+printfgcf(enum fgcol fgc, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfgc()");
+    setfgc(fgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stdout, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+static inline int
+fprintbgcf(FILE *stream, enum bgcol bgc, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stream, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+static inline int
+printbgcf(enum bgcol bgc, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setbgc()");
+    setbgc(bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stdout, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+static inline int
+fprintfgbgcf(       FILE  *stream,
+             enum   fgcol fgc,
+             enum   bgcol bgc,
+             const   char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfgbgc()");
+    setfgbgc(fgc, bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stream, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+static inline int
+printfgbgcf(enum fgcol fgc, enum bgcol bgc, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfgbgc()");
+    setfgbgc(fgc, bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stdout, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+/**
+ *  \note  May change type 'enum fmtset' to 'enum allfmts'
+ */
+static inline int
+fprintfmtfgbgcf(        FILE    *stream,
+                enum    fmtset  fmt,
+                enum    fgcol   fgc,
+                enum    bgcol   bgc,
+                const   char    *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmtfgbgc()");
+    setfmtfgbgc(fmt, fgc, bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stream, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+/**
+ *  \note  May change type 'enum fmtset' to 'enum allfmts'
+ */
+static inline int
+printfmtfgbgcf(enum  fmtset  fmt,
+            enum  fgcol   fgc,
+            enum  bgcol   bgc,
+            const char    *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmtfgbgc()");
+    setfmtfgbgc(fmt, fgc, bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stdout, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+/**
+ *  \note  May change type 'enum fmtset' to 'enum allfmts'
+ */
+static inline int
+fprintfmtfgcf(      FILE    *stream,
+              enum  fmtset  fmt,
+              enum  fgcol   fgc,
+              const char    *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmtfgc()");
+    setfmtfgc(fmt, fgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stream, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+/**
+ *  \note  May change type 'enum fmtset' to 'enum allfmts'
+ */
+static inline int
+printfmtfgcf(enum fmtset fmt, enum fgcol fgc, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmtfgc()");
+    setfmtfgc(fmt, fgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stdout, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+/**
+ *  \note  May change type 'enum fmtset' to 'enum allfmts'
+ */
+static inline int
+fprintfmtbgcf(      FILE    *stream,
+              enum  fmtset  fmt,
+              enum  bgcol   bgc,
+              const char    *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmtbgc()");
+    setfmtbgc(fmt, bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stream, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
+
+/**
+ *  \note  May change type 'enum fmtset' to 'enum allfmts'
+ */
+static inline int
+printfmtbgcf(enum fmtset fmt, enum bgcol bgc, const char *format, ...)
+{
+    INFUNC_MSGL(DEBUG);
+    CALLFN_MSGLS(TRACE, "setfmtbgc()");
+    setfmtbgc(fmt, bgc);
+
+    va_list vargs;
+    CALLFN_MSGLS(TRACE, "xvfprintf()");
+    int tn = xvfprintf(stdout, format, vargs);
+
+    R_MSGLD(DEBUG, tn);
+    return tn;
+}
 #endif  /* TERMSOLE_H */
