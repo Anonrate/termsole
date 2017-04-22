@@ -35,20 +35,6 @@
 
 #include  "linux/linuxterm.h"
 
-inline int
-xvfprintf(FILE *stream, const char *format, va_list vargs)
-{
-    INFUNC_MSGL(DEBUG);
-
-    int tn = 0;
-    va_start(vargs, format);
-    tn = vfprintf(stream, format, vargs);
-    va_end(vargs);
-
-    R_MSGLD(DEBUG, tn);
-    return tn;
-}
-
 static inline int
 fprintfmtf(FILE *stream, enum fmtset fmt, const char *format, ...)
 {
@@ -57,8 +43,10 @@ fprintfmtf(FILE *stream, enum fmtset fmt, const char *format, ...)
     setfmt(fmt);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stream, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -72,8 +60,10 @@ printfmtf(enum fmtset fmt, const char *format, ...)
     setfmt(fmt);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stdout, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stdout, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -87,8 +77,10 @@ fprintfgcf(FILE *stream, enum fgcol fgc, const char *format, ...)
     setfgc(fgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stream, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -102,8 +94,10 @@ printfgcf(enum fgcol fgc, const char *format, ...)
     setfgc(fgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stdout, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stdout, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -117,8 +111,10 @@ fprintbgcf(FILE *stream, enum bgcol bgc, const char *format, ...)
     setbgc(bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stream, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -132,8 +128,10 @@ printbgcf(enum bgcol bgc, const char *format, ...)
     setbgc(bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stdout, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stdout, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -150,8 +148,10 @@ fprintfgbgcf(       FILE  *stream,
     setfgbgc(fgc, bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stream, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -165,8 +165,10 @@ printfgbgcf(enum fgcol fgc, enum bgcol bgc, const char *format, ...)
     setfgbgc(fgc, bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stdout, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stdout, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -187,8 +189,10 @@ fprintfmtfgbgcf(        FILE    *stream,
     setfmtfgbgc(fmt, fgc, bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stream, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -208,8 +212,10 @@ printfmtfgbgcf(enum  fmtset  fmt,
     setfmtfgbgc(fmt, fgc, bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stdout, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stdout, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -229,8 +235,10 @@ fprintfmtfgcf(      FILE    *stream,
     setfmtfgc(fmt, fgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stream, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -247,8 +255,10 @@ printfmtfgcf(enum fmtset fmt, enum fgcol fgc, const char *format, ...)
     setfmtfgc(fmt, fgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stdout, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stdout, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -268,8 +278,10 @@ fprintfmtbgcf(      FILE    *stream,
     setfmtbgc(fmt, bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stream, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stream, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
@@ -286,8 +298,10 @@ printfmtbgcf(enum fmtset fmt, enum bgcol bgc, const char *format, ...)
     setfmtbgc(fmt, bgc);
 
     va_list vargs;
-    CALLFN_MSGLS(TRACE, "xvfprintf()");
-    int tn = xvfprintf(stdout, format, vargs);
+    va_start(vargs, format);
+    CALLFN_MSGLS(TRACE, "vfprintf()");
+    int tn = vfprintf(stdout, format, vargs);
+    va_end(vargs);
 
     R_MSGLD(DEBUG, tn);
     return tn;
