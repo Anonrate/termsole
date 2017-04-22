@@ -273,7 +273,7 @@ resetallfmt(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    int tn = setfmt(RS_ALL);
+    int tn = resetfmt(RS_ALL);
 
     R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
     return tn;
@@ -285,7 +285,7 @@ resetbold(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    int tn = setfmt(RS_BOLD);
+    int tn = resetfmt(RS_BOLD);
 
     R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
     return tn;
@@ -296,7 +296,7 @@ resetdim(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    int tn = setfmt(RS_DIM);
+    int tn = resetfmt(RS_DIM);
 
     R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
     return tn;
@@ -307,7 +307,7 @@ resetunderlined(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    int tn = setfmt(RS_UNDERLINED);
+    int tn = resetfmt(RS_UNDERLINED);
 
     R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
     return tn;
@@ -318,7 +318,7 @@ resetblink(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    int tn = setfmt(RS_BLINK);
+    int tn = resetfmt(RS_BLINK);
 
     R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
     return tn;
@@ -329,7 +329,7 @@ resetreverse(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    int tn = setfmt(RS_REVERSE);
+    int tn = resetfmt(RS_REVERSE);
 
     R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
     return tn;
@@ -340,7 +340,7 @@ resethidden(void)
 {
     INFUNC_MSGL(DEBUG);
     CALLFN_MSGLS(TRACE, "rsetfmt()");
-    int tn = setfmt(RS_HIDDEN);
+    int tn = resetfmt(RS_HIDDEN);
 
     R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
     return tn;
