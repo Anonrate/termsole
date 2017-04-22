@@ -32,136 +32,90 @@
 #include  "cntrlseq/fgcols.h"
 #include  "cntrlseq/bgcols.h"
 
-/**
- *  @returns  If \c setfgc() and \c setbgc() succeed, \c 7 is returned.\n
- *            If \c setfgc() succeeds and \c setbgc() fail, \c 2 is
- *              returned.\n
- *            If \c setfgc() fails and \c setbgc() succeeds, \c 3 is
- *              returned.\n
- *            If \c setfgc() and \c setbgc() fail, \c 0 will be returned.
- */
 static inline int
 swapfgbgc(void)
 {
     INFUNC_MSGL(DEBUG);
     enum fgcol tfgc = lstfgc;
 
+    int tn = 0;
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(lstbgc - 10u);
+    tn += setfgc(lstbgc - 10u);
 
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(tfgc + 10u);
+    tn += setbgc(tfgc + 10u);
 
-    return 0;
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
-/**
- *  @returns  If \c setfgc() and \c setbgc() succeed, \c 7 is returned.\n
- *            If \c setfgc() succeeds and \c setbgc() fail, \c 2 is
- *              returned.\n
- *            If \c setfgc() fails and \c setbgc() succeeds, \c 3 is
- *              returned.\n
- *            If \c setfgc() and \c setbgc() fail, \c 0 will be returned.
- */
 static inline int
 setfgbgc(enum fgcol fgc, enum bgcol bgc)
 {
     INFUNC_MSGL(DEBUG);
+
+    int tn = 0;
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(fgc);
+    tn += setfgc(fgc);
 
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(bgc);
+    tn += setbgc(bgc);
 
-    return 0;
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
-/**
- *  @returns  If \c setfmt(), \c setfgc() and \c setbgc() succeed, \c 8 is
- *              returned.\n
- *            If \c setfmt() succeeds, and \c setfgc() and \c setbgc() fail,
- *              \c 1 is returned.\n
- *            If \c setfmt() fails, \c setfgc() succeeds and \c setbgc()
- *              fails, \c 2 is returned.\n
- *            If \c setfmt(), \c setfgc() both fail, and \c setbgc() succeeds,
- *              \c 3 is returned.\n
- *            If \c setfmt(), \c setgfc() both succeed, and \c setbgc() fails,
- *              \c 5 is returned.\n
- *            If \c setfmt() succeeds, setfgc() fails and setbgc() succeeds,
- *              \c 6 is returned.\n
- *            If \c setfmt() fails, \c setfgc(), \c setbgc() both succeed, \c
- *              7 is returned.\n
- *            If \c setfmt(), \c setfgc() and \c setbgc() fail, \c 0 is
- *              returned.
- */
 static inline int
 setfmtfgbgc(enum fmtset fmt, enum fgcol fgc, enum bgcol bgc)
 {
     INFUNC_MSGL(DEBUG);
+
+    int tn = 0;
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(fmt);
+    tn += (setfmt(fmt) < 0 ? 0 : 1);
 
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(fgc);
+    tn += setfgc(fgc);
 
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(bgc);
+    tn += setbgc(bgc);
 
-    return 0;
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
-/**
- *  @returns  If \c setfmt() and \c setfgc() succeed, \c 5 is returned.\n
- *            If \c setfmt() succeeds and \c setfgc() fail, \c 1 is
- *              returned.\n
- *            If \c setfmt() fails and \c setfgc() succeeds, \c 2 is
- *              returned.\n
- *            If \c setfgc() and \c setbgc() fail, \c 0 will be returned.
- */
 static inline int
 setfmtfgc(enum fmtset fmt, enum fgcol fgc)
 {
     INFUNC_MSGL(DEBUG);
+
+    int tn = 0;
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(fmt);
+    tn += (setfmt(fmt) < 0 ? 0 : 1);
 
     CALLFN_MSGLS(TRACE, "setfgc()");
-    setfgc(fgc);
+    tn += setfgc(fgc);
 
-    return 0;
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
-/**
- *  @returns  If \c setfmt() and \c setbgc() succeed, \c 6 is returned.\n
- *            If \c setfmt() succeeds and \c setbgc() fail, \c 1 is
- *              returned.\n
- *            If \c setfmt() fails and \c setbgc() succeeds, \c 3 is
- *              returned.\n
- *            If \c setfgc() and \c setbgc() fail, \c 0 will be returned.
- */
 static inline int
 setfmtbgc(enum fmtset fmt, enum bgcol bgc)
 {
     INFUNC_MSGL(DEBUG);
+
+    int tn = 0;
     CALLFN_MSGLS(TRACE, "setfmt()");
-    setfmt(fmt);
+    tn += (setfmt(fmt) < 0 ? 0 : 1);
 
     CALLFN_MSGLS(TRACE, "setbgc()");
-    setbgc(bgc);
+    tn += setbgc(bgc);
 
-    return 0;
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
+    return tn;
 }
 
-/**
- *  @returns  If \c setfgcdef() and \c setbgcdef() succeed, \c 7 is
- *              returned.\n
- *            If \c setfgcdef() succeeds and \c setbgcdef() fail, \c 2 is
- *              returned.\n
- *            If \c setfgcdef() fails and \c setbgcdef() succeeds, \c 3 is
- *              returned.\n
- *            If \c setfgcdef() and \c setbgcdef() fail, \c 0 will be
- *              returned.
- */
 static inline int
 resetfgbgc(void)
 {
@@ -169,35 +123,15 @@ resetfgbgc(void)
 
     int tn = 0;
     CALLFN_MSGLS(TRACE, "setfgcdef()");
-    tn += (setfgcdef() ? 2 : 0);
+    tn += setfgcdef();
 
     CALLFN_MSGLS(TRACE, "setbgcdef()");
-    tn += (setbgcdef()
-            ? (tn
-                ? (3 + 2)
-                : 3)
-            : 0);
+    tn += setbgcdef();
 
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
     return tn;
 }
-/**
- *  @returns  If \c resetallfmt(), \c setfgcdef() and \c setbgcdef() succeed,
- *              \c 8 is returned.\n
- *            If \c resetallfmt() succeeds, and \c setfgcdef() and \c
- *              setbgcdef() fail, \c 1 is returned.\n
- *            If \c resetallfmt() fails, \c setfgcdef() succeeds and \c
- *              setbgcdef() fails, \c 2 is returned.\n
- *            If \c resetallfmt(), \c setfgcdef() both fail, and \c
- *              setbgcdef() succeeds, \c 3 is returned.\n
- *            If \c resetallfmt(), \c setgfcdef() both succeed, and \c
- *              setbgcdef() fails, \c 5 is returned.\n
- *            If \c resetallfmt() succeeds, setfgcdef() fails and setbgcdef()
- *              succeeds, \c 6 is returned.\n
- *            If \c resetallfmt() fails, \c setfgcdef(), \c setbgcdef() both
- *              succeed, \c 7 is returned.\n
- *            If \c resetallfmt(), \c setfgcdef() and \c setbgcdef() fail, \c
- *              0 is returned.
- */
+
 static inline int
 resetall(void)
 {
@@ -205,25 +139,15 @@ resetall(void)
 
     int tn = 0;
     CALLFN_MSGLS(TRACE, "resetallfmt()");
-    tn += (resetallfmt() >= 0 ? 1 : 0);
+    tn += (resetallfmt() < 0 ? 0 : 1);
 
-    printf("%d\n", tn);
     CALLFN_MSGLS(TRACE, "setfgcdef()");
-    tn += (setfgcdef()
-            ? (tn
-                ? (tn++ + 2)
-                : 2)
-            : 0);
+    tn += setfgcdef();
 
-    printf("%d\n", tn);
     CALLFN_MSGLS(TRACE, "setbgcdef()");
-    tn += (setbgcdef()
-            ? (tn
-                ? (tn++ + 3)
-                : 3)
-            : 0);
+    tn += setbgcdef();
 
-    printf("%d\n", tn);
+    R_MSGLD(tn ? DEBUG : ERROR, tn);
     return tn;
 }
 #endif  /* LINUXTERM_H */
