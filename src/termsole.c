@@ -41,11 +41,10 @@ main(void)
     setverblvl(TRACE);
     setfileprio(TRACE);
     logltffnlf(DEBUG, "%s\n", "Created log file!");
+
+    printfgcf(FG_RED, "%s\n", "Hello World!");
+
     dellog();
-
-    swapfgbgc();
-    printf("Bruh!\n");
-
     return EXIT_SUCCESS;
 }
 
