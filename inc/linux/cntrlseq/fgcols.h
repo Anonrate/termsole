@@ -78,6 +78,9 @@ setfgc(enum fgcol fgcolor)
             lstfgc = fgcolor;
             printf("\e[%um", fgcolor);
 
+            CALLFN_MSGLS(TRACE, "updatedeffgc()");
+            updatedeffgc(lstfgc);
+
             R_MSGLU(DEBUG, fgcolor);
             return (int)fgcolor;
         default:
