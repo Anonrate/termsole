@@ -28,6 +28,8 @@
 #ifndef FORMATS_H
 #define FORMATS_H
 
+#include  "enums/formatenum.h"
+
 struct
 fmts {
     int fmtbold;
@@ -39,44 +41,6 @@ fmts {
 };
 
 static struct fmts lstfmts = { 0, 0, 0, 0, 0, 0 };
-
-enum
-allfmts {
-    xS_BOLD         = 1u,
-    xS_DIM          = 2u,
-    xS_UNDERLINED   = 4u,
-    xS_BLINK        = 5u,
-    xS_REVERSE      = 7u,
-    xS_HIDDEN       = 8u,
-    xRS_ALL         = 0u,
-    xRS_BOLD        = 21u,
-    xRS_DIM         = 22u,
-    xRS_UNDERLINED  = 24u,
-    xRS_BLINK       = 25u,
-    xRS_REVERSE     = 27u,
-    xRS_HIDDEN      = 28u
-};
-
-enum
-fmtset {
-    S_BOLD        = xS_BOLD,
-    S_DIM         = xS_DIM,
-    S_UNDERLINED  = xS_UNDERLINED,
-    S_BLINK       = xS_BLINK,
-    S_REVERSE     = xS_REVERSE,
-    S_HIDDEN      = xS_HIDDEN
-};
-
-enum
-fmtreset {
-    RS_ALL        = xRS_ALL,
-    RS_BOLD       = xRS_BOLD,
-    RS_DIM        = xRS_DIM,
-    RS_UNDERLINED = xRS_UNDERLINED,
-    RS_BLINK      = xRS_BLINK,
-    RS_REVERSE    = xRS_REVERSE,
-    RS_HIDDEN     = xRS_HIDDEN
-};
 
 /**
  * @return  Retruns \c -1 if fail.
