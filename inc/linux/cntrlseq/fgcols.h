@@ -28,26 +28,7 @@
 #ifndef FGCOLS_H
 #define FGCOLS_H
 
-enum
-fgcol {
-    FG_DEF            = 39u,
-    FG_BLACK          = 30u,
-    FG_RED            = 31u,
-    FG_GREEN          = 32u,
-    FG_YELLOW         = 33u,
-    FG_BLUE           = 34u,
-    FG_MAGENTA        = 35u,
-    FG_CYAN           = 36u,
-    FG_LIGHT_GRAY     = 37u,
-    FG_DARK_GRAY      = 90u,
-    FG_LIGHT_RED      = 91u,
-    FG_LIGHT_GREEN    = 92u,
-    FG_LIGHT_YELLOW   = 93u,
-    FG_LIGHT_BLUE     = 94u,
-    FG_LIGHT_MAGENTA  = 95u,
-    FG_LIGHT_CYAN     = 96u,
-    FG_WHITE          = 97u
-};
+#include  "enums/fgcolenum.h"
 
 static enum fgcol   lstfgc   = FG_DEF;
 
