@@ -28,26 +28,7 @@
 #ifndef BGCOLS_H
 #define BGCOLS_H
 
-enum
-bgcol {
-    BG_DEF            = 49u,
-    BG_BLACK          = 40u,
-    BG_RED            = 41u,
-    BG_GREEN          = 42u,
-    BG_YELLOW         = 43u,
-    BG_BLUE           = 44u,
-    BG_MAGENTA        = 45u,
-    BG_CYAN           = 46u,
-    BG_LIGHT_GRAY     = 47u,
-    BG_DARK_GRAY      = 100u,
-    BG_LIGHT_RED      = 101u,
-    BG_LIGHT_GREEN    = 102u,
-    BG_LIGHT_YELLOW   = 103u,
-    BG_LIGHT_BLUE     = 104u,
-    BG_LIGHT_MAGENTA  = 105u,
-    BG_LIGHT_CYAN     = 106u,
-    BG_WHITE          = 107u
-};
+#include  "enums/bgcolenum.h"
 
 static enum bgcol   lstbgc   = BG_DEF;
 
