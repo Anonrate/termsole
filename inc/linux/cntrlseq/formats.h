@@ -83,14 +83,12 @@ setfmt(enum fmtset fmt)
     {
         logltffnlf(WARNING, "%u is not a valid fmt!\n", fmt);
 
-        R_MSGLD(WARNING, -1);
-        return -1;
+        return R_MSGLD(WARNING, -1);
     }
 
     printf("\e[%um", fmt);
 
-    R_MSGLU(DEBUG, fmt);
-    return (int)fmt;
+    return R_MSGLD(DEBUG, (int)fmt);
 }
 
 static inline int
@@ -100,8 +98,7 @@ setbold(void)
     CALLFN_MSGLS(TRACE, "setfmt()");
     int tn = setfmt(S_BOLD);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -111,8 +108,7 @@ setdim(void)
     CALLFN_MSGLS(TRACE, "setfmt()");
     int tn = setfmt(S_DIM);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -122,8 +118,7 @@ setunderlined(void)
     CALLFN_MSGLS(TRACE, "setfmt()");
     int tn = setfmt(S_UNDERLINED);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -133,8 +128,7 @@ setblink(void)
     CALLFN_MSGLS(TRACE, "setfmt()");
     int tn = setfmt(S_BLINK);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -144,8 +138,7 @@ setreverse(void)
     CALLFN_MSGLS(TRACE, "setfmt()");
     int tn = setfmt(S_REVERSE);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -155,8 +148,7 @@ sethidden(void)
     CALLFN_MSGLS(TRACE, "setfmt()");
     int tn = setfmt(S_HIDDEN);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -173,8 +165,7 @@ resetfmt(enum allfmts rsfmtorfmt)
         lstfmts.fmtreverse    =
         lstfmts.fmthidden     = 0;
 
-        R_MSGLU(DEBUG, rsfmtorfmt);
-        return (int)rsfmtorfmt;
+        return R_MSGLD(DEBUG, (int)rsfmtorfmt);
     }
 
     switch (rsfmtorfmt)
@@ -224,12 +215,10 @@ resetfmt(enum allfmts rsfmtorfmt)
         default:
             logltffnlf(WARNING, "%u is not a valid rsetfmt!\n", rsfmtorfmt);
 
-            R_MSGLD(WARNING, -1);
-            return -1;
+            return R_MSGLD(WARNING, -1);
     }
 
-    R_MSGLU(DEBUG, rsfmtorfmt);
-    return (int)rsfmtorfmt;
+    return R_MSGLD(DEBUG, (int)rsfmtorfmt);
 }
 
 static inline int
@@ -239,8 +228,7 @@ resetallfmt(void)
     CALLFN_MSGLS(TRACE, "rsetfmt()");
     int tn = resetfmt(RS_ALL);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 
@@ -251,8 +239,7 @@ resetbold(void)
     CALLFN_MSGLS(TRACE, "rsetfmt()");
     int tn = resetfmt(RS_BOLD);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -262,8 +249,7 @@ resetdim(void)
     CALLFN_MSGLS(TRACE, "rsetfmt()");
     int tn = resetfmt(RS_DIM);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -273,8 +259,7 @@ resetunderlined(void)
     CALLFN_MSGLS(TRACE, "rsetfmt()");
     int tn = resetfmt(RS_UNDERLINED);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -284,8 +269,7 @@ resetblink(void)
     CALLFN_MSGLS(TRACE, "rsetfmt()");
     int tn = resetfmt(RS_BLINK);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -295,8 +279,7 @@ resetreverse(void)
     CALLFN_MSGLS(TRACE, "rsetfmt()");
     int tn = resetfmt(RS_REVERSE);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -306,8 +289,7 @@ resethidden(void)
     CALLFN_MSGLS(TRACE, "rsetfmt()");
     int tn = resetfmt(RS_HIDDEN);
 
-    R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
-    return tn;
+    return R_MSGLD(tn < 0 ? ERROR : DEBUG, tn);
 }
 
 static inline int
@@ -315,8 +297,7 @@ isboldset(void)
 {
     INFUNC_MSGL(DEBUG);
 
-    R_MSGLD(DEBUG, lstfmts.fmtbold);
-    return lstfmts.fmtbold;
+    return R_MSGLD(DEBUG, lstfmts.fmtbold);
 }
 
 static inline int
@@ -324,8 +305,7 @@ isdimset(void)
 {
     INFUNC_MSGL(DEBUG);
 
-    R_MSGLD(DEBUG, lstfmts.fmtdim);
-    return lstfmts.fmtdim;
+    return R_MSGLD(DEBUG, lstfmts.fmtdim);
 }
 
 static inline int
@@ -333,8 +313,7 @@ isunderlinedset(void)
 {
     INFUNC_MSGL(DEBUG);
 
-    R_MSGLD(DEBUG, lstfmts.fmtunderlined);
-    return lstfmts.fmtunderlined;
+    return R_MSGLD(DEBUG, lstfmts.fmtunderlined);
 }
 
 static inline int
@@ -342,8 +321,7 @@ isblinkset(void)
 {
     INFUNC_MSGL(DEBUG);
 
-    R_MSGLD(DEBUG, lstfmts.fmtblink);
-    return lstfmts.fmtblink;
+    return R_MSGLD(DEBUG, lstfmts.fmtblink);
 }
 
 static inline int
@@ -351,8 +329,7 @@ isreverseset(void)
 {
     INFUNC_MSGL(DEBUG);
 
-    R_MSGLD(DEBUG, lstfmts.fmtreverse);
-    return lstfmts.fmtreverse;
+    return R_MSGLD(DEBUG, lstfmts.fmtreverse);
 }
 
 static inline int
@@ -360,7 +337,6 @@ ishiddenset(void)
 {
     INFUNC_MSGL(DEBUG);
 
-    R_MSGLD(DEBUG, lstfmts.fmthidden);
-    return lstfmts.fmthidden;
+    return R_MSGLD(DEBUG, lstfmts.fmthidden);
 }
 #endif  /* FORMATS_H */

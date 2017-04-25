@@ -48,8 +48,7 @@ fprintfmtf(FILE *stream, enum fmtset fmt, const char *format, ...)
     int tn = vfprintf(stream, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 static inline int
@@ -65,8 +64,7 @@ printfmtf(enum fmtset fmt, const char *format, ...)
     int tn = vfprintf(stdout, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 static inline int
@@ -82,8 +80,7 @@ fprintfgcf(FILE *stream, enum fgcol fgc, const char *format, ...)
     int tn = vfprintf(stream, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 static inline int
@@ -99,8 +96,7 @@ printfgcf(enum fgcol fgc, const char *format, ...)
     int tn = vfprintf(stdout, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 static inline int
@@ -116,8 +112,7 @@ fprintbgcf(FILE *stream, enum bgcol bgc, const char *format, ...)
     int tn = vfprintf(stream, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 static inline int
@@ -133,8 +128,7 @@ printbgcf(enum bgcol bgc, const char *format, ...)
     int tn = vfprintf(stdout, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 static inline int
@@ -153,8 +147,7 @@ fprintfgbgcf(       FILE  *stream,
     int tn = vfprintf(stream, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 static inline int
@@ -170,8 +163,7 @@ printfgbgcf(enum fgcol fgc, enum bgcol bgc, const char *format, ...)
     int tn = vfprintf(stdout, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 /**
@@ -194,8 +186,7 @@ fprintfmtfgbgcf(        FILE    *stream,
     int tn = vfprintf(stream, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 /**
@@ -217,8 +208,7 @@ printfmtfgbgcf(enum  fmtset  fmt,
     int tn = vfprintf(stdout, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 /**
@@ -240,8 +230,7 @@ fprintfmtfgcf(      FILE    *stream,
     int tn = vfprintf(stream, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 /**
@@ -260,8 +249,7 @@ printfmtfgcf(enum fmtset fmt, enum fgcol fgc, const char *format, ...)
     int tn = vfprintf(stdout, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 /**
@@ -283,8 +271,7 @@ fprintfmtbgcf(      FILE    *stream,
     int tn = vfprintf(stream, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 
 /**
@@ -303,7 +290,6 @@ printfmtbgcf(enum fmtset fmt, enum bgcol bgc, const char *format, ...)
     int tn = vfprintf(stdout, format, vargs);
     va_end(vargs);
 
-    R_MSGLD(DEBUG, tn);
-    return tn;
+    return R_MSGLD(DEBUG, tn);
 }
 #endif  /* TERMSOLE_H */

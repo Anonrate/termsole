@@ -76,8 +76,8 @@ setbgcdef(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_DEF);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+//    return (R_MSGLD(DEBUG, (CALLFN_MSGLS(TRACE), setbgc(BG_DEF))));
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -87,8 +87,7 @@ setbgcblack(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_BLACK);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -98,8 +97,7 @@ setbgcred(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_RED);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -109,8 +107,7 @@ setbgcgreen(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_GREEN);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -120,8 +117,7 @@ setbgcyellow(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_YELLOW);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -131,8 +127,7 @@ setbgcblue(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_BLUE);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -142,8 +137,7 @@ setbgcmagenta(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_MAGENTA);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -153,8 +147,7 @@ setbgccyan(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_CYAN);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -164,8 +157,7 @@ setbgclightgray(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_LIGHT_GRAY);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -175,8 +167,7 @@ setbgcdarkgray(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_DARK_GRAY);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -186,8 +177,7 @@ setbgclightred(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_LIGHT_RED);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -197,8 +187,7 @@ setbgclightgreen(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_LIGHT_GREEN);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -208,8 +197,7 @@ setbgclightyellow(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_LIGHT_YELLOW);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -219,8 +207,7 @@ setbgclightblue(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_LIGHT_BLUE);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -230,8 +217,7 @@ setbgclightmagenta(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_LIGHT_MAGENTA);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -241,8 +227,7 @@ setbgclightcyan(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_LIGHT_CYAN);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -252,7 +237,6 @@ setbgcwhite(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_WHITE);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 #endif  /* BGCOLS_H */

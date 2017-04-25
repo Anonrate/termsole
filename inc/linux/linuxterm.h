@@ -45,8 +45,7 @@ swapfgbgc(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     tn += setbgc(tfgc + 10u);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -61,8 +60,7 @@ setfgbgc(enum fgcol fgc, enum bgcol bgc)
     CALLFN_MSGLS(TRACE, "setbgc()");
     tn += setbgc(bgc);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -80,8 +78,7 @@ setfmtfgbgc(enum fmtset fmt, enum fgcol fgc, enum bgcol bgc)
     CALLFN_MSGLS(TRACE, "setbgc()");
     tn += setbgc(bgc);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -96,8 +93,7 @@ setfmtfgc(enum fmtset fmt, enum fgcol fgc)
     CALLFN_MSGLS(TRACE, "setfgc()");
     tn += setfgc(fgc);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -112,8 +108,7 @@ setfmtbgc(enum fmtset fmt, enum bgcol bgc)
     CALLFN_MSGLS(TRACE, "setbgc()");
     tn += setbgc(bgc);
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -128,8 +123,7 @@ resetfgbgc(void)
     CALLFN_MSGLS(TRACE, "setbgcdef()");
     tn += setbgcdef();
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
 static inline int
@@ -147,7 +141,6 @@ resetall(void)
     CALLFN_MSGLS(TRACE, "setbgcdef()");
     tn += setbgcdef();
 
-    R_MSGLD(tn ? DEBUG : ERROR, tn);
-    return tn;
+    return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 #endif  /* LINUXTERM_H */
