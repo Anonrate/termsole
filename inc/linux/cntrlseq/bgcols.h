@@ -59,13 +59,11 @@ setbgc(enum bgcol bgcolor)
             lstbgc = bgcolor;
             printf("\e[%um", bgcolor);
 
-            R_MSGLU(DEBUG, bgcolor);
-            return (int)bgcolor;
+            return R_MSGLD(DEBUG, (int)bgcolor);
         default:
             logltffnlf(WARNING, "%u is not a valid bgcol!\n", bgcolor);
 
-            R_MSGLD(WARNING, 0);
-            return 0;
+            return R_MSGLD(WARNING, 0);
     }
 }
 
