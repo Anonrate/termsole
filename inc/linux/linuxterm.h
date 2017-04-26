@@ -36,6 +36,7 @@ static inline int
 swapfgbgc(void)
 {
     INFUNC_MSGL(DEBUG);
+
     enum fgcol tfgc = lstfgc;
 
     int tn = 0;
