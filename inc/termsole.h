@@ -35,6 +35,12 @@
 
 #include  "linux/linuxterm.h"
 
+extern void
+flushbuf(char *buf);
+
+extern int
+getintin(char *buf, int *pn);
+
 static inline int
 fprintfmtf(FILE *stream, enum fmtset fmt, const char *format, ...)
 {
