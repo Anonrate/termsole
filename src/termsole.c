@@ -48,8 +48,8 @@ main(void)
     setfileprio(TRACE);
     int n;
     printf("Choose a random number, and I will tell you it: ");
-    getintin(255, &n);
-    printf("Your number was %d!\n", n);
+    //getintin(255, &n);
+    //printf("Your number was %d!\n", n);
     dellog();
     return EXIT_SUCCESS;
 }
@@ -61,50 +61,155 @@ flushbuf(char *buf)
     buf[strlen(buf) - 1lu] = 0;
 }
 
-int
-getintin(long maxbuf, int *pn)
+long long
+getlonglonginbase(char *buf, size_t size, long long *pll, int base)
 {
     INFUNC_MSGL(DEBUG);
 
-    char *buf = malloc(maxbuf);
+    buf = malloc(size);
 
-    if (!buf)
+    if (!fgets(buf, size, stdin))
     {
-        logltffnlf(WARNING, "%s\n", "'buf can not be 0...'");
+        logltffnlf(ERROR, "%s is not a valid long long!\n", buf);
 
-        return R_MSGLD(WARNING, 1);
+        return R_MSGLLLI(DEBUG, 0ll);
     }
-
-    if (!fgets(buf, maxbuf, stdin))
-    {
-        logltffnlf(ERROR, "%s is not a valid int!\n", buf);
-
-        return R_MSGLD(DEBUG, 0);
-    }
-
-    CALLFN_MSGLS(TRACE, "flushbuf()");
-    flushbuf(buf);
 
     char *ts;
 
     errno = 0;
-    int tn = strtol(buf, &ts, 10);
-    if ((errno == ERANGE
-                && (tn == LONG_MAX || tn == LONG_MIN))
-            || (errno && !tn))
+    long long tll = strtoll(buf, &ts, base);
+    if (((errno == ERANGE)
+                && ((tll == LLONG_MAX) || (tll == LLONG_MIN)))
+            || (errno && !tll))
+    {
+        logltffnlf(FATAL, "%s\n", "strtoll()");
+        exit(EXIT_FAILURE);
+    }
+
+    if ((ts == buf) && (*ts))
+    {
+        logltffnlf(ERROR, "%s is not a valid long long!\n", ts);
+
+        return R_MSGLLLI(ERROR, 0ll);
+    }
+
+    return R_MSGLLLI(DEBUG, ((*pll) = tll));
+}
+
+long long
+getlonglongin(char *buf, size_t size, long long *pll)
+{
+    INFUNC_MSGL(DEBUG);
+
+    long long tll;
+    CALLFN_MSGLS(TRACE, "getlonglonginbase()");
+    long long trll  = getlonglonginbase(buf, size, &tll, 0);
+    (*pll)          = tll;
+
+    return R_MSGLLLI(DEBUG, trll);
+}
+
+static long
+xgetlonginbase(       char    *buf,
+                      size_t  size,
+                      long    *pl,
+                      int     base,
+               const  long    lmax,
+               const  long    lmin,
+                      char    *emsg)
+{
+    INFUNC_MSGL(DEBUG);
+
+    buf = malloc(size);
+
+    if (!fgets(buf, size, stdin))
+    {
+        logltffnlf(ERROR, "%s is not a valid %s!\n", buf, emsg);
+
+        return R_MSGLLLI(DEBUG, 0l);
+    }
+
+    char *ts;
+
+    errno = 0;
+    long tl = strtol(buf, &ts, base);
+    if (((errno == ERANGE)
+                && ((tl == lmax) || (tl == lmin)))
+            || (errno && !tl))
     {
         logltffnlf(FATAL, "%s\n", "strtol()");
         exit(EXIT_FAILURE);
     }
 
-    if (ts == buf && *ts != '\0')
+    if ((ts == buf) && (*ts))
     {
-        logltffnlf(ERROR, "%s is not a integer!\n", ts);
+        logltffnlf(ERROR, "%s is not a valid %s!\n", ts, emsg);
 
-        return R_MSGLD(ERROR, 0);
+        return R_MSGLLI(ERROR, 0l);
     }
 
-    return R_MSGLD(DEBUG, ((*pn) = tn));
+    return R_MSGLLI(DEBUG, ((*pl) = tl));
+}
+
+long
+getlonginbase(char *buf, size_t size, long *pl, int base)
+{
+    INFUNC_MSGL(DEBUG);
+
+    long tl;
+    CALLFN_MSGLS(TRACE, "xgetlonginbase()");
+    long trl  =
+        xgetlonginbase(buf, size, &tl, base, LONG_MAX, LONG_MIN, "long");
+    (*pl)     = tl;
+
+    return R_MSGLLI(DEBUG, trl);
+}
+
+long
+getlongin(char *buf, size_t size, long *pl)
+{
+    INFUNC_MSGL(DEBUG);
+
+    long tl;
+    CALLFN_MSGLS(TRACE, "getlonginbase()");
+    long trl  = getlonginbase(buf, size, &tl, 0);
+    (*pl)     = tl;
+
+    return R_MSGLLI(DEBUG, trl);
+}
+
+int
+getintinbase(char *buf, size_t size, int *pn, int base)
+{
+    INFUNC_MSGL(DEBUG);
+
+    int tn;
+    CALLFN_MSGLS(TRACE, "xgetlonginbase()");
+    int trn =
+        (int)xgetlonginbase(buf,
+                            size,
+                            (long*)&tn,
+                            base,
+                            INT_MAX,
+                            INT_MIN,
+                            "int");
+    (*pn)   = tn;
+
+    return R_MSGLD(DEBUG, trn);
+}
+
+int
+getintin(char *buf, size_t size, int *pn)
+{
+    INFUNC_MSGL(DEBUG);
+
+    int tn;
+    CALLFN_MSGLS(TRACE, "getintinsb()");
+    int trn = getintinbase(buf, size, &tn, 0);
+    (*pn)   = tn;
+
+    return R_MSGLD(DEBUG, trn);
 }
 
 #endif  /* TERMOSLE_DEV */

@@ -39,7 +39,22 @@ extern void
 flushbuf(char *buf);
 
 extern int
-getintin(long maxbuf, int *pn);
+getintin(char *buf, size_t size, int *pn);
+
+extern int
+getintinbase(char *buf, size_t size, int *pn, int base);
+
+extern long
+getlongin(char *buf, size_t size, long *pl);
+
+extern long
+getlonginbase(char *buf, size_t size, long *pl, int base);
+
+extern long long
+getlonglongin(char *buf, size_t size, long long *pll);
+
+extern long long
+getlonglonginbase(char *buf, size_t size, long long *pll, int base);
 
 static inline int
 fprintfmtf(FILE *stream, enum fmtset fmt, const char *format, ...)
