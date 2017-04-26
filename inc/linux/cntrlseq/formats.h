@@ -88,6 +88,9 @@ setfmt(enum fmtset fmt)
 
     printf("\e[%um", fmt);
 
+    SET_MSGLUU(INFO, defattrb.fmt, fmt);
+    defattrb.fmt = fmt;
+
     return R_MSGLD(DEBUG, (int)fmt);
 }
 
@@ -158,12 +161,16 @@ resetfmt(enum allfmts rsfmtorfmt)
     if (!rsfmtorfmt)
     {
         printf("\e[%um", rsfmtorfmt);
+
         lstfmts.fmtbold       =
         lstfmts.fmtdim        =
         lstfmts.fmtunderlined =
         lstfmts.fmtblink      =
         lstfmts.fmtreverse    =
         lstfmts.fmthidden     = 0;
+
+        SET_MSGLUU(INFO, defattrb.fmt, rsfmtorfmt);
+        defattrb.fmt = rsfmtorfmt;
 
         return R_MSGLD(DEBUG, (int)rsfmtorfmt);
     }
@@ -174,42 +181,66 @@ resetfmt(enum allfmts rsfmtorfmt)
         case RS_BOLD:
             SET_MSGLDD(INFO, lstfmts.fmtbold, 0);
             lstfmts.fmtbold       = 0;
+
             printf("\e[%um", RS_BOLD);
+
+            SET_MSGLUU(INFO, defattrb.fmt, RS_BOLD);
+            defattrb.fmt          = RS_BOLD;
 
             break;
         case S_DIM:
         case RS_DIM:
             SET_MSGLDD(INFO, lstfmts.fmtdim, 0);
             lstfmts.fmtdim        = 0;
+
             printf("\e[%um", RS_DIM);
+
+            SET_MSGLUU(INFO, defattrb.fmt, RS_DIM);
+            defattrb.fmt          = RS_DIM;
 
             break;
         case S_UNDERLINED:
         case RS_UNDERLINED:
             SET_MSGLDD(INFO, lstfmts.fmtunderlined, 0);
             lstfmts.fmtunderlined = 0;
+
             printf("\e[%um", RS_UNDERLINED);
+
+            SET_MSGLUU(INFO, defattrb.fmt, RS_UNDERLINED);
+            defattrb.fmt          = RS_UNDERLINED;
 
             break;
         case S_BLINK:
         case RS_BLINK:
             SET_MSGLDD(INFO, lstfmts.fmtblink, 0);
             lstfmts.fmtblink      = 0;
+
             printf("\e[%um", RS_BLINK);
+
+            SET_MSGLUU(INFO, defattrb.fmt, RS_BLINK);
+            defattrb.fmt          = RS_BLINK;
 
             break;
         case S_REVERSE:
         case RS_REVERSE:
             SET_MSGLDD(INFO, lstfmts.fmtreverse, 0);
             lstfmts.fmtreverse    = 0;
+
             printf("\e[%um", RS_REVERSE);
+
+            SET_MSGLUU(INFO, defattrb.fmt, RS_REVERSE);
+            defattrb.fmt          = RS_REVERSE;
 
             break;
         case S_HIDDEN:
         case RS_HIDDEN:
             SET_MSGLDD(INFO, lstfmts.fmthidden, 0);
             lstfmts.fmthidden     = 0;
+
             printf("\e[%um", RS_HIDDEN);
+
+            SET_MSGLUU(INFO, defattrb.fmt, RS_HIDDEN);
+            defattrb.fmt          = RS_HIDDEN;
 
             break;
         default:
