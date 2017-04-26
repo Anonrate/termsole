@@ -46,10 +46,9 @@ main(void)
     setfilename("termsole");
     setverblvl(TRACE);
     setfileprio(TRACE);
-    char *buf = malloc(255);
     int n;
     printf("Choose a random number, and I will tell you it: ");
-    getintin(buf, &n);
+    getintin(255, &n);
     printf("Your number was %d!\n", n);
     dellog();
     return EXIT_SUCCESS;
@@ -63,9 +62,11 @@ flushbuf(char *buf)
 }
 
 int
-getintin(char *buf, int *pn)
+getintin(long maxbuf, int *pn)
 {
     INFUNC_MSGL(DEBUG);
+
+    char *buf = malloc(maxbuf);
 
     if (!buf)
     {
@@ -74,7 +75,7 @@ getintin(char *buf, int *pn)
         return R_MSGLD(WARNING, 1);
     }
 
-    if (!fgets(buf, sizeof buf, stdin))
+    if (!fgets(buf, maxbuf, stdin))
     {
         logltffnlf(ERROR, "%s is not a valid int!\n", buf);
 
