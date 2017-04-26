@@ -57,7 +57,11 @@ setbgc(enum bgcol bgcolor)
         case BG_WHITE:
             SET_MSGLUU(INFO, lstbgc, bgcolor);
             lstbgc = bgcolor;
+
             printf("\e[%um", bgcolor);
+
+            SET_MSGLUU(INFO, defattrb.bgc, lstbgc);
+            defattrb.bgc = lstbgc;
 
             return R_MSGLD(DEBUG, (int)bgcolor);
         default:
@@ -74,7 +78,6 @@ setbgcdef(void)
     CALLFN_MSGLS(TRACE, "setbgc()");
     int tn = setbgc(BG_DEF);
 
-//    return (R_MSGLD(DEBUG, (CALLFN_MSGLS(TRACE), setbgc(BG_DEF))));
     return R_MSGLD(tn ? DEBUG : ERROR, tn);
 }
 
