@@ -57,9 +57,10 @@ setfgc(enum fgcol fgcolor)
         case FG_WHITE:
             SET_MSGLUU(INFO, lstfgc, fgcolor);
             lstfgc = fgcolor;
+
             printf("\e[%um", fgcolor);
 
-            CALLFN_MSGLS(TRACE, "updatedeffgc()");
+            SET_MSGLUU(INFO, defattrb.fgc, lstfgc);
             defattrb.fgc = lstfgc;
 
             return R_MSGLD(DEBUG, (int)fgcolor);
